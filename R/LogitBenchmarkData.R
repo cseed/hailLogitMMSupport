@@ -46,7 +46,7 @@ BenchData=read.table(data)
 vars=paste('V',1:neff,sep='')
 dv_=paste(vars,collapse='+')
 colnames(BenchData)=c('ID','Variant','GT',vars,'Pheno')
-dataset=dcast(as.formula(paste('ID + ',dv_,' + Pheno ~ Variant',sep='')),value.var='GT',data=BenchData)
+dataset=reshape2::dcast(as.formula(paste('ID + ',dv_,' + Pheno ~ Variant',sep='')),value.var='GT',data=BenchData)
 #head(dataset)
 y=dataset$Pheno
 X.fe=dataset[,2:(neff+1)]

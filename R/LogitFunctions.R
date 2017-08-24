@@ -69,7 +69,6 @@ logit.PG.EM.mm.gen <- function(y, X.re, X.fe, phi,c,  inc.m=F, n=rep(1, length(y
     #Length of number of individuals
     psi = drop(X %*% dbm)
     #  str(X)
-    
     #length(psi)
     #Compute expected value of w
     #E-step on w
@@ -177,7 +176,7 @@ logit.PG.EM.mm.gen.gibbs <- function(y, X.re, X.fe, phi,c,  inc.m=F, n=rep(1, le
     psi = drop(X %*% dbm)
     #E-step on w
     #w=drop((n/(2*psi))*tanh(psi/2))
-    w = rpg.devroye(N, n, psi);
+    w = BayesLogit::rpg.devroye(N, n, psi);
     
     S = t(X) %*% (X * w);
     Vw=solve(S+solve(PP))

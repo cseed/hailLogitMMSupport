@@ -4,7 +4,9 @@ Version: 1.0
 Author: Tonis Tasa (ttasa@ut.ee) [“aut”,”crea”]
 Description: The package contains implementations of several fixed effect and mixed effect logistic regression models. These implementations supported the development of the logistic mixed model for Hail software (hail.is).
 Depends: R (>= 3.3.3)
-Imports: MASS, dplyr, plyr, reshape2, BayesLogit
+Imports: MASS,
+	 reshape2,
+	 BayesLogit
 License: MIT 
 Encoding: UTF-8
 LazyData: true

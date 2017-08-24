@@ -38,7 +38,7 @@ Data=function(nx,beta=c(0.4,0.6,-0.4),phi=1,probset1=c(0.4,0.3,0.3),probset2=c(0
   num=rnorm(nrow(mat_f))
   num2=rnorm(nrow(mat_f))+0.01*(1:nrow(mat_f))
   
-  ksi=mvrnorm(mu=cbind(1,num,num2)%*%beta,Sigma=phi*K)
+  ksi=MASS::mvrnorm(mu=cbind(1,num,num2)%*%beta,Sigma=phi*K)
   probs=exp(ksi)/((exp(ksi)+1))
   
   y=sapply(probs,function(z){
